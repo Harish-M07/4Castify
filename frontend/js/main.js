@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const splashScreen = document.getElementById('splash-screen');
-    const appContainer = document.getElementById('app-container');
     const errorCard = document.getElementById('error-card');
-    const backendUrl = 'http://127.0.0.1:8000';
+    const backendUrl = '';
 
     let hourlyChart = null;
     

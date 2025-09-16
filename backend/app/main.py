@@ -51,6 +51,8 @@ def get_daily_forecast(lat: float = Query(...), lon: float = Query(...)):
     try: response = requests.get(url); response.raise_for_status(); return format_daily_forecast_data(response.json())
     except requests.exceptions.RequestException as e: raise HTTPException(status_code=500, detail=f"Error fetching data: {e}")
 
+# ... (all the imports and helper functions are the same) ...
+
 # --- CORRECT CODE TO SERVE FRONTEND ---
 current_dir = os.path.dirname(os.path.abspath(__file__))
 frontend_dir = os.path.join(os.path.dirname(current_dir), "frontend")
@@ -58,6 +60,8 @@ frontend_dir = os.path.join(os.path.dirname(current_dir), "frontend")
 # Mount static files
 app.mount("/css", StaticFiles(directory=os.path.join(frontend_dir, "css")), name="css")
 app.mount("/js", StaticFiles(directory=os.path.join(frontend_dir, "js")), name="js")
+# NEW: Mount the new img folder
+app.mount("/img", StaticFiles(directory=os.path.join(frontend_dir, "img")), name="img")
 
 # Serve the index.html as the root
 @app.get("/")
