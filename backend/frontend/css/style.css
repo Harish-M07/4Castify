@@ -183,3 +183,16 @@ body.theme-night .weather-details {
 .fade-in {
     animation: fadeIn 0.5s ease-in forwards;
 }
+/* Live Clock Style */
+#live-clock {
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+/* Current Date Style */
+#current-date {
+    font-size: 1rem;
+    margin: -0.75rem 0 0.5rem 0; /* Adjusts spacing around the clock */
+    opacity: 0.9;
+}
